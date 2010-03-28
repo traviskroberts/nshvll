@@ -17,6 +17,7 @@ class MembersController < ApplicationController
       SiteMailer.deliver_member_activation(@member)
       redirect_to member_confirm_path
     else
+      @categories = Category.all(:order => 'name')
       render :action => 'new'
     end
   end

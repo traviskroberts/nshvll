@@ -8,20 +8,22 @@
   src: local('Inconsolata'), url('/fonts/Inconsolata.ttf') format('truetype');
 }
 
-html, body { background-color:#0f0f0f; height:100%; }
+html, body { background-color:#0f0f0f; height:100%; margin:0; padding:0; }
 a, a:link, a:visited { text-decoration:none; color:#bfbfbf; }
 a:hover { color:#fff; }
 h1 { color:#c3c1be; font:normal 28px/100% 'Grablau Web', helvetica, arial, sans-serif; }
-p { color:#c3c1be; }
+p { color:#c3c1be; font-family:helvetica, arial, sans-serif; }
 label { color:#c3c1be; display:block; float:left; font-size:20px; line-height:33px; margin:0 15px 0 0; width:85px; }
 label.category_label { display:inline; float:none; font-size:16px; margin:0; width:auto; }
 input[type="text"] { border:1px solid #999; font-size:18px; margin:0 0 3px 0; padding:5px; }
 input[type="file"] { background-color:#0f0f0f; color:#fff; font-size:14px; margin:10px 0 0 0; }
 
 #container { margin:0 auto; min-height:100%; height: auto !important; height: 100%; margin: 0 auto -50px; min-width:900px; max-width:1125px; }
+#error_dialog { margin:0 auto; padding:4em; text-align:center; width:600px; }
 #footer, #push { height:50px; }
 #footer { background-color:#282728; }
 #footer-inner { margin:0 auto; min-width:900px; max-width:1125px; }
+#footer-inner p { margin:0; }
 #pagination { color:#fff; padding:25px 0; }
 #pagination .more, #pagination .loading { font-size:24px; line-height:100%; }
 #pagination .more a { background:url('/images/icon_more.png') no-repeat 0 2px; padding:0 0 0 25px; }

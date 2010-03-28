@@ -16,3 +16,7 @@ Rails::Initializer.run do |config|
   config.action_mailer.default_url_options = { :host => "nshvll.org" }
   
 end
+
+# Exception Notifier settings
+ExceptionNotification::Notifier.exception_recipients = %w(nshvlltn@gmail.com)
+ExceptionNotification::Notifier.sender_address = %("NSHVLL Error" <app.error@nshvll.org>)

@@ -7,7 +7,6 @@ require File.join(File.dirname(__FILE__), 'boot')
 Rails::Initializer.run do |config|
 
   # Specify gems that this application depends on and have them installed with rake gems:install
-  config.gem 'authlogic'
   config.gem 'mislav-will_paginate', :lib => 'will_paginate'
 
   # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.

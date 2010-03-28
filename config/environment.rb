@@ -13,6 +13,6 @@ Rails::Initializer.run do |config|
   config.time_zone = 'UTC'
   
   # set base host for mailer
-  config.action_mailer.default_url_options = { :host => "localhost:3000" }
+  config.action_mailer.default_url_options = { :host => "nshvll.org" }
   
 end

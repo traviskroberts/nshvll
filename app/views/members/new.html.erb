@@ -1,0 +1,42 @@
+<h1 class="add_listing">Add Yourself</h1>
+
+<p>*All fields are required.</p>
+<% form_for(@member, :html => {:multipart => true}) do |f| %>
+  <%= f.error_messages %>
+  <p>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+      <span class="hint">Who are you?</span>
+  </p>
+  <p>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+      <span class="hint">Required to activate your account. Not shown.</span>
+  </p>
+  <p>
+      <%= f.label :url, 'Website' %>
+      <%= f.text_field :url %>
+      <span class="hint">You do have a website, right?</span>
+  </p>
+  <p>
+    <%= f.label :image, 'Image' %>
+    <%= f.file_field :image %>
+    <span class="hint">Image will be cropped to a 200x200 square.</span>
+  </p>
+  <p>
+    <label>What are you?</label>
+    <ul class="member_categories">
+      <%- @categories.each do |category| -%>
+        <li>
+          <%= check_box_tag 'member[category_ids][]', category.id, @member.categories.include?(category), :id => dom_id(category) %>
+          <label for="<%= dom_id(category) %>" class="category_label"><%= category.name %></label>
+        </li>
+      <%- end -%>
+    </ul>
+    <span class="hint">Choose <strong>up to 3</strong> categories.</span>
+    <span class="small">Don't see your title? <%= mail_to 'nshvlltn@gmail.com', 'Let me know' %>.</span>
+  </p>
+  <p class="submit">
+    <%= f.submit 'Submit' %>
+  </p>
+<% end %>

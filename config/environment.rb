@@ -7,15 +7,13 @@ require File.join(File.dirname(__FILE__), 'boot')
 Rails::Initializer.run do |config|
 
   # Specify gems that this application depends on and have them installed with rake gems:install
-  # config.gem "", :version => '', :source => "", :lib => ""
-
-  # Skip frameworks you're not going to use.
-  # config.frameworks -= [ :active_record, :active_resource, :action_mailer ]
-
-  # Activate observers that should always be running
-  # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
+  config.gem 'authlogic'
+  config.gem 'mislav-will_paginate', :lib => 'will_paginate'
 
   # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
   config.time_zone = 'UTC'
+  
+  # set base host for mailer
+  config.action_mailer.default_url_options = { :host => "localhost:3000" }
   
 end

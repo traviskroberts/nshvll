@@ -1,0 +1,69 @@
+@font-face {
+  font-family: 'Graublau Web';
+  src: url('/fonts/GraublauWeb.eot');
+  src: local('Graublau Web Regular'), local('Graublau Web'), url('/fonts/GraublauWeb.otf') format('opentype'); 
+  
+  font-family: 'Inconsolata';
+  src: url('/fonts/Inconsolata.eot');
+  src: local('Inconsolata'), url('/fonts/Inconsolata.ttf') format('truetype');
+}
+
+html, body { background-color:#0f0f0f; height:100%; }
+a, a:link, a:visited { text-decoration:none; color:#bfbfbf; }
+a:hover { color:#fff; }
+h1 { color:#c3c1be; font:normal 28px/100% 'Grablau Web', helvetica, arial, sans-serif; }
+p { color:#c3c1be; }
+label { color:#c3c1be; display:block; float:left; font-size:20px; line-height:33px; margin:0 15px 0 0; width:85px; }
+label.category_label { display:inline; float:none; font-size:16px; margin:0; width:auto; }
+input[type="text"] { border:1px solid #999; font-size:18px; margin:0 0 3px 0; padding:5px; }
+input[type="file"] { background-color:#0f0f0f; color:#fff; font-size:14px; margin:10px 0 0 0; }
+
+#container { margin:0 auto; min-height:100%; height: auto !important; height: 100%; margin: 0 auto -50px; min-width:900px; max-width:1125px; }
+#footer, #push { height:50px; }
+#footer { background-color:#282728; }
+#footer-inner { margin:0 auto; min-width:900px; max-width:1125px; }
+#pagination { color:#fff; padding:25px 0; }
+#pagination .more, #pagination .loading { font-size:24px; line-height:100%; }
+#pagination .more a { background:url('/images/icon_more.png') no-repeat 0 2px; padding:0 0 0 25px; }
+#pagination .more a:hover { background-position:0 -74px; }
+#pagination .loading { background:url('/images/loading.gif') no-repeat 0 0; padding:0 0 0 28px; }
+
+.main_h1 { color:#c3c1be; font-size:125px; font-weight:bold; float:left; line-height:100%; margin:0 10px 0 0; }
+.main_h1 a, .main_h1 a:visited { color:#c3c1be; text-decoration:none; }
+.main_h1 a:hover { color:#fff; }
+.sub_h1 { color:#595959; font-family:'Inconsolata', helvetica, arial, sans-serif; font-size:40px; line-height:125px; }
+.hint { color:#999; display:block; padding:0 0 0 100px; }
+.hint strong { text-decoration:underline; }
+.small { color:#999; display:block; font-size:11px; padding:0 0 0 100px; }
+.submit { padding:0 0 0 275px; }
+.submit input { background-color:#282728; border:1px solid #000; border-radius:4px; color:#bfbfbf; font-size:20px; padding:10px; -webkit-border-radius:4px; -moz-border-radius:8px; }
+.submit input:hover { cursor:pointer; }
+.member_categories { margin:0 0 0 100px; padding:0; width:350px; }
+.member_categories li { color:#c3c1be; display:inline-block; font-size:16px; margin:0 10px 5px 0; padding:0; }
+.member_entry { float:left; height:200px; margin:0 25px 25px 0; overflow:hidden; position:relative; width:200px; }
+.member_entry img { position:absolute; left:0; top:0; }
+.member_entry .member_info { background-color:rgba(0, 0, 0, 0.80); color:#fff; padding:5px 10px 25px 10px; position:absolute; left:0; top:160px; width:180px; }
+.member_entry .member_info .name { display:block; font:normal 22px/150% 'Graublau Web', helvetica, arial, sans-serif; margin:0 0 5px 0; text-shadow: 1px 1px #666; }
+.member_entry .member_info em { color:#CCC; display:block; font-family:georgia, times, serif; font-size:13px; }
+.confirm { font-size:16px; }
+.clear { clear:both; }
+.footer-links { float:left; font-size:30px; line-height:50px; }
+.byline { color:#fff; float:right; line-height:50px; }
+
+/* ERROR MESSAGES */
+.fieldWithErrors { padding: 2px 0; background-color: #900; }
+#errorExplanation { width: 400px; border: 2px solid #900; padding: 7px; padding-bottom: 12px; margin-bottom: 20px; background-color: #f0f0f0; }
+#errorExplanation h2 { text-align: left; font-weight: bold; padding: 5px 5px 5px 15px; font-size: 12px; margin: -7px; background-color: #c00; color: #fff; }
+#errorExplanation p { color: #333; margin-bottom: 0; padding: 5px; }
+#errorExplanation ul { margin:0; }
+#errorExplanation ul li { font-size: 12px; list-style: square; }
+
+/* FLASH MESSAGES */
+#error, #success { width:90%; margin:0 auto 10px auto; padding:5px; border:2px solid #DDD; }
+#error p, #success p { margin-left:20px; margin-bottom:0; padding:0; font-size:12px; color:#000; }
+#error a, #success a { text-decoration:none; padding:0 3px; }
+#error a:hover, #success a:hover { color:#000; border:1px solid #000; }
+#error { background-color:#FBE3E4; color:#8A1F11; border-color:#FBC2C4; }
+#success { background-color:#E6EFC2; color:#264409; border-color:#C6D880; }
+#error a { border:1px solid #8A1F11; color:#8A1F11; }
+#success a { border:1px solid #264409; color:#264409; }

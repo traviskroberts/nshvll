@@ -1,7 +1,18 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#   
-#   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
-#   Major.create(:name => 'Daley', :city => cities.first)
+require 'faker'
+
+Category.delete_all
+Member.delete_all
+
+['Blogger', 'Designer', 'Developer', 'Project Manager', 'SEO Specialist', 'Sysadmin'].each do |category|
+  Category.create!(:name => category)
+end
+
+50.times do
+  member = Member.new
+  member.name = Faker::Name.name
+  member.email = Faker::Internet.email
+  member.url = 'http://' + Faker::Internet.domain_name
+  member.active = true
+  member.image = File.open(File.join(Rails.root, 'public', 'images', 'avatar.jpg'))
+  member.save
+end

@@ -1,0 +1,8 @@
+Please activate your listing on nshvll.org
+-------------------------------------
+Listing Details
+Name: <%= @member.name %>
+Email: <%= @member.email %>
+Website: <%= @member.url %>
+
+Activate your listing: <%= member_activate_url(:activation_code => @member.activation) %>

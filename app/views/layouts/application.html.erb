@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title><%= @page_title || 'NSHVLL tech community' %></title>
+  <%= stylesheet_link_tag 'reset', 'text', 'nshvll' %>
+  <%= javascript_include_tag 'jquery-1.3.2.min', 'jquery.easing.1.3', 'application' %>
+</head>
+<body>
+  <div id="container">
+    <h1 class="main_h1"><%= link_to 'NSHVLL', root_path %></h1>
+    <h1 class="sub_h1">tech community</h1>
+    <div class="clear"></div>
+    
+    <%- if !flash.blank? -%>
+      <%- flash.each do |key, msg| -%>
+        <div id="<%= key %>">
+          <p style="float:right;"><%= link_to_function 'X', "$('##{key}').fadeOut()" %></p>
+          <p><%= msg %></p>
+          <div class="clear"></div>
+        </div>
+      <%- end -%>
+    <%- end -%>
+    
+    <%= yield %>
+    <div id="push"></div>
+  </div><!-- container -->
+  <div id="footer">
+    <div id="footer-inner">
+      <p class="footer-links"><%= link_to 'Join the Club', new_member_path %></p>
+      <p class="byline">
+        Created by <%= link_to 'Travis Roberts', 'http://travisonrails.com', :popup => true %>
+        &nbsp;|&nbsp;
+        Inspired by <%= link_to 'Chris Kalani', 'http://chriskalani.com/', :popup => true %>
+        and <%= link_to 'prtlnd.com', 'http://prtlnd.com', :popup => true %>
+      </p>
+    </div><!-- footer-inner -->
+  </div><!-- footer -->
+</body>
+</html>

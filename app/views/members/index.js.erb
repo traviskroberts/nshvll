@@ -1,0 +1,17 @@
+$('#members').append("<%= escape_javascript(render("members")) %>");
+$('#pagination').html("<%= escape_javascript(render("pagination")) %>");
+
+// have to re-do the hover effect (sucks!)
+$(document).ready(function() {
+  // show and hide member info panels
+  $('.member_entry').hover(
+    function() {
+      var target_div = $(this).find('.member_info');
+      var move = 185 - target_div.height();
+      $(this).find('.member_info').animate({top:move}, {queue:false, duration:250, easing: 'easeInSine'});
+    },
+    function() {
+      $(this).find('.member_info').animate({top:'160px'}, {queue:false, duration:250, easing: 'easeOutSine'});
+    }
+  );
+});

@@ -5,6 +5,6 @@ class SiteMailer < ActionMailer::Base
     @recipients = member.email
     @from = '"NSHVLL" <no_reply@nshvll.org>'
     @sent_on = Time.now
-    @headers = {}
+    @headers["X-SMTPAPI"] = {}
   end
 end

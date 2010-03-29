@@ -11,6 +11,11 @@ $(document).ready(function() {
     }
   );
   
+  // fix style for webkit input type=file
+  if ($.browser.safari) {
+    $('#member_image').css('color', '#c3c1be');
+  };
+  
   // ajax link to show more members
   $('#pagination a').live('click', function() {
     $("#pagination").html('<p class="loading">Working on it...</p>');

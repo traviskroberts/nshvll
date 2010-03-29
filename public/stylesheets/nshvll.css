@@ -9,6 +9,7 @@
 }
 
 html, body { background-color:#0f0f0f; height:100%; margin:0; padding:0; }
+body { padding:20px 0 0 0; }
 a, a:link, a:visited { text-decoration:none; color:#bfbfbf; }
 a:hover { color:#fff; }
 h1 { color:#c3c1be; font:normal 28px/100% 'Grablau Web', helvetica, arial, sans-serif; }
@@ -16,7 +17,7 @@ p { color:#c3c1be; font-family:helvetica, arial, sans-serif; }
 label { color:#c3c1be; display:block; float:left; font-size:20px; line-height:33px; margin:0 15px 0 0; width:85px; }
 label.category_label { display:inline; float:none; font-size:16px; margin:0; width:auto; }
 input[type="text"] { border:1px solid #999; font-size:18px; margin:0 0 3px 0; padding:5px; }
-input[type="file"] { background-color:#0f0f0f; color:#fff; font-size:14px; margin:10px 0 0 0; }
+input[type="file"] { color:#000; font-size:14px; margin:10px 0 0 0; }
 
 #container { margin:0 auto; min-height:100%; height: auto !important; height: 100%; margin: 0 auto -50px; min-width:900px; max-width:1125px; }
 #error_dialog { margin:0 auto; padding:4em; text-align:center; width:600px; }
@@ -30,10 +31,10 @@ input[type="file"] { background-color:#0f0f0f; color:#fff; font-size:14px; margi
 #pagination .more a:hover { background-position:0 -74px; }
 #pagination .loading { background:url('/images/loading.gif') no-repeat 0 0; padding:0 0 0 28px; }
 
-.main_h1 { color:#c3c1be; font-size:125px; font-weight:bold; float:left; line-height:100%; margin:0 10px 0 0; }
-.main_h1 a, .main_h1 a:visited { color:#c3c1be; text-decoration:none; }
+.main_h1 { color:#c3c1be; font-size:125px; font-weight:bold; float:left; line-height:100%; margin:0 10px 10px 0; }
+.main_h1 a, .main_h1 a:visited { color:#c3c1be; display:block; text-decoration:none; }
 .main_h1 a:hover { color:#fff; }
-.sub_h1 { color:#595959; font-family:'Inconsolata', helvetica, arial, sans-serif; font-size:40px; line-height:125px; }
+.sub_h1 { color:#595959; font-family:'Inconsolata', helvetica, arial, sans-serif; font-size:40px; line-height:100%; padding:35px 0 0 0; }
 .hint { color:#999; display:block; padding:0 0 0 100px; }
 .hint strong { text-decoration:underline; }
 .small { color:#999; display:block; font-size:11px; padding:0 0 0 100px; }

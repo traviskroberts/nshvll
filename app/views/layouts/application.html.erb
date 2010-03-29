@@ -4,8 +4,13 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title><%= @page_title || 'NSHVLL tech community' %></title>
+  <link href='/images/nshvll.png' rel='shortcut icon' />
   <%= stylesheet_link_tag 'reset', 'text', 'nshvll' %>
   <%= javascript_include_tag 'jquery-1.3.2.min', 'jquery.easing.1.3', 'application' %>
+  
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" href="/stylesheets/ie.css" type="text/css" media="screen" />
+  <![endif]-->
 </head>
 <body>
   <div id="container">

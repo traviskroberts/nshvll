@@ -1,7 +1,7 @@
-$('#members').append("<%= escape_javascript(render("members")) %>");
+$('#members').append("<div id='page_<%= @page %>' class='new_page'><%= escape_javascript(render("members")) %></div>");
 $('#pagination').html("<%= escape_javascript(render("pagination")) %>");
 
-// have to re-do the hover effect (sucks!)
+// have to re-do the hover effect (because the 'live' function can't bind the 'hover' action - sucks!)
 $(document).ready(function() {
   // show and hide member info panels
   $('.member_entry').hover(
@@ -14,4 +14,7 @@ $(document).ready(function() {
       $(this).find('.member_info').animate({top:'160px'}, {queue:false, duration:250, easing: 'easeOutSine'});
     }
   );
+  
+  // scroll the page down to the new entries
+  $("#page_<%= @page %>").scrollThis();
 });

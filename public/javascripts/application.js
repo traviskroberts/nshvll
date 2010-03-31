@@ -32,3 +32,9 @@ $(document).ready(function() {
   })
 });
 
+// function to add a scroll effect to pagination
+jQuery.fn.scrollThis = function() {
+  var x = $(this).offset().top - 50; // 100 provides buffer in viewport
+  $('html,body').animate({scrollTop: x}, {queue:false, duration:750, easing: 'easeInSine'});
+};
+

@@ -2,6 +2,7 @@ class MembersController < ApplicationController
   
   def index
     @members = Member.approved.paginate(:all, :per_page => 15, :page => params[:page], :include => :categories)
+    @page = params[:page]
   end
 
   def new

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100331015856) do
+ActiveRecord::Schema.define(:version => 20100403005019) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -35,6 +35,8 @@ ActiveRecord::Schema.define(:version => 20100331015856) do
     t.datetime "image_updated_at"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "edit_code"
+    t.datetime "edit_time"
   end
 
   create_table "typus_users", :force => true do |t|

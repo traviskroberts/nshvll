@@ -11,6 +11,11 @@ $(document).ready(function() {
     }
   );
   
+  // hide the flash notice after 5 seconds
+  if ($(".flash").length) {
+    setTimeout(function() { $('.flash').fadeOut(); }, 5000);
+  };
+  
   // apply "uniform" style to category select
   $('#category_select').uniform();
   

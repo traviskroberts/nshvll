@@ -9,10 +9,10 @@ class Member < ActiveRecord::Base
   
   before_create :generate_activation_code
   
-  named_scope :approved, :conditions => ['active = ?', true], :order => 'updated_at DESC'
+  named_scope :approved, :conditions => ['active = ?', true], :order => 'created_at DESC'
   
   has_attached_file :image,
-                    :styles => { :normal => '200x200#' },
+                    :styles => { :normal => '200x200#', :small => '100x100#' },
                     :default_style => :normal,
                     :url => "/system/:class/:attachment/:id/:style/:basename.:extension",
                     :path => ":rails_root/public/system/:class/:attachment/:id/:style/:basename.:extension"
@@ -21,14 +21,31 @@ class Member < ActiveRecord::Base
     self.find(:first, :conditions => ['activation = ?', activation_code])
   end
   
+  def self.find_by_edit_code(code)
+    now = Time.now
+    cutoff = now - 1800 # edit link is only good for 30 minutes
+    self.find(:first, :conditions => ['edit_code = ? AND edit_time BETWEEN ? AND ?', code, cutoff, now])
+  end
+  
   def generate_activation_code
     # let's make sure the activation code is SUPER unique
     chars = 'abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ23456789'
     salt = ''
     20.times { |i| salt << chars[rand(chars.length)] }
     
-    activation_code = Digest::SHA1.hexdigest(Time.now.to_s + salt)
+    code = Digest::SHA1.hexdigest(Time.now.to_s + salt)
     
-    self.activation = activation_code
+    self.activation = code
+  end
+  
+  def generate_edit_code
+    # let's make sure the edit code is SUPER unique
+    chars = 'abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNOPQRSTUVWXYZ23456789'
+    salt = ''
+    20.times { |i| salt << chars[rand(chars.length)] }
+    
+    code = Digest::SHA1.hexdigest(self.email + salt)
+    
+    self.update_attributes(:edit_code => code, :edit_time => Time.now)
   end
 end

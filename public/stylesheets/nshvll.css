@@ -35,6 +35,12 @@ input[type="file"] { color:#000; font-size:14px; margin:10px 0 0 0; }
 .main_h1 a, .main_h1 a:visited { color:#c3c1be; display:block; text-decoration:none; }
 .main_h1 a:hover { color:#fff; }
 .sub_h1 { color:#595959; font-family:'Inconsolata', helvetica, arial, sans-serif; font-size:40px; line-height:100%; padding:35px 0 0 0; }
+.category_title { color:#c3c1be; font:bold 50px/100% 'Graublau Web', helvetica, arial, sans-serif; position:absolute; top:0; left:0; -webkit-transform: rotate(-90deg); -moz-transform: rotate(-90deg); }
+.category_select_container { display:inline; float:left; margin:0 0 0 0; }
+.category_select_label { float:left; font-size:16px; padding:4px 0 0 0; margin:0 5px 10px 0; }
+.edit_listing { display:inline; float:right; font-size:18px; margin:0 25px 0 0; padding:5px 0 0 0; }
+.image_field { padding:0 0 0 100px; }
+.image_field .hint { padding:0; }
 .hint { color:#999; display:block; padding:0 0 0 100px; }
 .hint strong { text-decoration:underline; }
 .small { color:#999; display:block; font-size:11px; padding:0 0 0 100px; }
@@ -49,16 +55,8 @@ input[type="file"] { color:#000; font-size:14px; margin:10px 0 0 0; }
 .member_entry .member_info .name { display:block; font:normal 22px/150% 'Graublau Web', helvetica, arial, sans-serif; margin:0 0 5px 0; text-shadow: 1px 1px #666; }
 .member_entry .member_info em { color:#CCC; display:block; font-family:georgia, times, serif; font-size:13px; }
 .new_page { clear:both; }
-.category_title {
-  color:#c3c1be;
-  font:bold 50px/100% 'Graublau Web', helvetica, arial, sans-serif;
-  position:absolute; top:0; left:0;
-  -webkit-transform: rotate(-90deg);
-  -moz-transform: rotate(-90deg);
-}
-.category_select_container { display:inline; float:left; margin:0 0 0 0; }
-.category_select_label { float:left; font-size:16px; padding:4px 0 0 0; margin:0 5px 10px 0; }
 .confirm { font-size:16px; }
+.generate_edit_form label { width:150px; }
 .clear { clear:both; }
 .footer-links { float:left; font-size:30px; line-height:50px; }
 .byline { color:#fff; float:right; line-height:50px; }

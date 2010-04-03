@@ -11,6 +11,9 @@ $(document).ready(function() {
     }
   );
   
+  // apply "uniform" style to category select
+  $('#category_select').uniform();
+  
   // fix style for webkit input type=file
   if ($.browser.safari) {
     $('#member_image').css('color', '#c3c1be');
@@ -30,11 +33,27 @@ $(document).ready(function() {
       return false;
     }
   })
+  
+  // need to dynamically move the category header because of varying sizes
+  if ($('.category_title').length) {
+    var el_width = $('.category_title').width();
+    var move_top = el_width/2 + 160;
+    var move_left = el_width/2 + 40;
+    $('.category_title').css('left', '-' + move_left + 'px');
+    $('.category_title').css('top', move_top + 'px');
+    $('.category_title').show();
+  };
+  
+  // submit the category drop-down on change
+  $('#category_select').change(function() {
+    var slug = $(this).val();
+    window.location = 'http://' + location.host + '/category/' + slug;
+  });
 });
 
 // function to add a scroll effect to pagination
 jQuery.fn.scrollThis = function() {
-  var x = $(this).offset().top - 50; // 100 provides buffer in viewport
+  var x = $(this).offset().top - 20; // 100 provides buffer in viewport
   $('html,body').animate({scrollTop: x}, {queue:false, duration:750, easing: 'easeInSine'});
 };
 

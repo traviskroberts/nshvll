@@ -1,0 +1,10 @@
+<div class="category_select_container">
+  <p class="category_select_label">Show me</p>
+  <select name="category" id="category_select">
+    <option value="all">All Members</option>
+    <%- @categories.each do |category| -%>
+      <option value="<%= category.slug %>" <%= "selected='selected'" if @category === category %>><%= category.name.pluralize %></option>
+    <%- end -%>
+  </select>
+</div><!-- category_select_container -->
+<div class="clear"></div>

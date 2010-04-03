@@ -4,8 +4,8 @@
 
 Category:
   fields:
-    list: name
-    form: name
+    list: name, slug
+    form: name, slug
   order_by: 
   relationships: members
   filters: 

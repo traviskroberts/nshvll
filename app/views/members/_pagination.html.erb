@@ -1,3 +1,6 @@
 <%- if !@members.next_page.blank? -%>
-  <p class="more"><%= link_to 'Show Me More', root_path(:page => @members.next_page) %></p>
+  <p class="more">
+    <%= link_to 'Show Me More', 
+                @category.blank? ? root_path(:page => @members.next_page) : category_path(:slug => @category.slug, :page => @members.next_page) %>
+  </p>
 <%- end -%>

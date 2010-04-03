@@ -57,7 +57,7 @@ input[type="file"] { color:#000; font-size:14px; margin:10px 0 0 0; }
   -moz-transform: rotate(-90deg);
 }
 .category_select_container { display:inline; float:left; margin:0 0 0 0; }
-.category_select_label { float:left; padding:5px 0 0 0; margin:0 5px 10px 0; }
+.category_select_label { float:left; font-size:16px; padding:4px 0 0 0; margin:0 5px 10px 0; }
 .confirm { font-size:16px; }
 .clear { clear:both; }
 .footer-links { float:left; font-size:30px; line-height:50px; }

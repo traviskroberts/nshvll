@@ -1,11 +1,11 @@
 @font-face {
   font-family: 'Graublau Web';
   src: url('/fonts/GraublauWeb.eot');
-  src: local('Graublau Web Regular'), local('Graublau Web'), url('/fonts/GraublauWeb.otf') format('opentype'); 
+  src: local('☺'), url('/fonts/GraublauWeb.otf') format('opentype'); 
   
   font-family: 'Inconsolata';
   src: url('/fonts/Inconsolata.eot');
-  src: local('Inconsolata'), url('/fonts/Inconsolata.ttf') format('truetype');
+  src: local('☺'), url('/fonts/Inconsolata.ttf') format('truetype');
 }
 
 html, body { background-color:#0f0f0f; height:100%; margin:0; padding:0; }

@@ -1,6 +1,20 @@
 <%= render :partial => 'category_select' %>
 
 <div id="members">
+  <%- @newest_members.each do |member| -%>
+    <div class="member_entry">
+      <a href="<%= member.url %>" target="_blank">
+        <%= image_tag member.image.url %>
+        <div class="member_info">
+          <span class="name"><%= member.name %></span>
+          <%- member.categories.each do |cat| -%>
+            <em><%= cat.name %></em>
+          <%- end -%>
+        </div><!-- member_info -->
+      </a>
+    </div><!-- member_entry -->
+  <%- end -%>
+  
   <%= render :partial => 'members' %>
 </div><!-- members -->
 

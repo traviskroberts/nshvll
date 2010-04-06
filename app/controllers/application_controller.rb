@@ -4,5 +4,13 @@
 class ApplicationController < ActionController::Base
   include ExceptionNotification::Notifiable
   
+  before_filter :set_rand_cookie
+  
   protect_from_forgery
+  
+  protected
+  def set_rand_cookie
+    return if !cookies[:rand_seed].blank?
+    cookies[:rand_seed] = {:value => rand(100), :expires => Time.now + 300}
+  end
 end

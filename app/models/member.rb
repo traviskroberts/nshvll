@@ -9,7 +9,8 @@ class Member < ActiveRecord::Base
   
   before_create :generate_activation_code
   
-  named_scope :approved, :conditions => ['active = ?', true], :order => 'created_at DESC'
+  named_scope :recent, :order => 'created_at DESC', :limit => 5
+  named_scope :approved, :conditions => ['active = ?', true]
   
   has_attached_file :image,
                     :styles => { :normal => '200x200#', :small => '100x100#' },

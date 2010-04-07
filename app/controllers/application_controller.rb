@@ -11,6 +11,6 @@ class ApplicationController < ActionController::Base
   protected
   def set_rand_cookie
     return if !cookies[:rand_seed].blank?
-    cookies[:rand_seed] = {:value => rand(100), :expires => Time.now + 300}
+    cookies[:rand_seed] = {:value => rand(100), :expires => Time.now + 900}
   end
 end

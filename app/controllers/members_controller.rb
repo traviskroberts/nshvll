@@ -1,16 +1,7 @@
 class MembersController < ApplicationController
   
   def index
-    # get the most recent 5 members
-    @newest_members = Member.recent
-
-    # paginate the rest of the members
-    @members = Member.approved.paginate(:all,
-                                        :per_page => 15,
-                                        :page => params[:page],
-                                        :conditions => ['id NOT IN (?)', @newest_members.collect(&:id)],
-                                        :order => "RAND(#{cookies[:rand_seed]})",
-                                        :include => :categories)
+    @members = Member.approved.paginate(:all, :per_page => 15, :page => params[:page], :order => "RAND(#{cookies[:rand_seed]})", :include => :categories)
     
     @categories = Category.all(:order => 'name')
     @page = params[:page]

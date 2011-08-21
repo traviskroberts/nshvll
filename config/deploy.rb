@@ -41,7 +41,7 @@ namespace :deploy do
   desc "Symlink database and environment config files."
   task :symlink_files do
     run "ln -nfs #{shared_path}/system/database.yml #{release_path}/config/database.yml"
-    run "ln -nfs #{shared_path}/system/environment.rb #{release_path}/config/environment.rb"
+    run "ln -nfs #{shared_path}/email.rb #{release_path}/config/initializers/email.rb"
   end
 end
  

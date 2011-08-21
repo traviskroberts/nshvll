@@ -1,7 +1,9 @@
+.rvmrc
 log/*.log
 tmp/**/*
 doc/api
 doc/app
 config/database.yml
-config/environment.rb
+config/initializers/email.rb
+config/deploy.rb
 public/system

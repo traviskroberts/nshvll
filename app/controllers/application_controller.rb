@@ -1,13 +1,7 @@
-# Filters added to this controller apply to all controllers in the application.
-# Likewise, all the methods added will be available for all controllers.
-
 class ApplicationController < ActionController::Base
-  include ExceptionNotification::Notifiable
-  
-  before_filter :set_rand_cookie
-  
   protect_from_forgery
-  
+  before_filter :set_rand_cookie
+
   protected
   def set_rand_cookie
     return if !cookies[:rand_seed].blank?

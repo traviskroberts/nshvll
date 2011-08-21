@@ -1,5 +1,3 @@
-require 'railsmachine/recipes'
-
 # =============================================================================
 # REQUIRED VARIABLES
 # =============================================================================
@@ -14,11 +12,7 @@ set :domain, "nshvll.org"
 
 # Login user for ssh.
 set :user, "deploy"
-set :runner, user
-set :admin_runner, user
-
-# Rails environment. Used by application setup tasks and migrate tasks.
-set :rails_env, "production"
+set :use_sudo, false
 
 # =============================================================================
 # ROLES
@@ -30,25 +24,15 @@ role :db,  domain, :primary => true
 role :scm, domain
 
 # =============================================================================
-# APPLICATION SERVER OPTIONS
-# ============================================================================= 
-set :app_server, :passenger  # :mongrel or :passenger
-
-# =============================================================================
-# DATABASE OPTIONS
-# =============================================================================
-set :database, "mysql"   # mysql or postgresql
-
-# =============================================================================
 # SCM OPTIONS
 # =============================================================================
-set :scm, :git    # :subversion or :git
+set :scm, :git
 set :repository, "git@github.com:travisr/nshvll.git"
+set :branch, :master
 
 # =============================================================================
 # CAPISTRANO OPTIONS
 # =============================================================================
-# default_run_options[:pty] = true
 set :keep_releases, 3
 set :deploy_via, :remote_cache
 
@@ -62,3 +46,4 @@ namespace :deploy do
 end
  
 after 'deploy:update_code', 'deploy:symlink_files'
+after 'deploy:symlink', 'deploy:cleanup'

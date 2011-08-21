@@ -1,6 +1,6 @@
 <h1 class="add_listing">Edit Your Listing</h1>
 
-<% form_for(@member, :html => {:multipart => true}) do |f| %>
+<%= form_for(@member, :html => {:multipart => true}) do |f| %>
   <%= f.error_messages %>
   <%= render :partial => 'form', :locals => {:f => f} %>
   <p class="submit">

@@ -3,7 +3,7 @@
 <p>Enter the email address you used when you registered. You will be emailed an edit link that is good for 30 minutes. No login required!</p>
 
 <div class="generate_edit_form">
-  <% form_tag member_generate_edit_path do %>
+  <%= form_tag member_generate_edit_path do %>
     <p>
       <%= label_tag :email, 'Email Address' %>
       <%= text_field_tag :email, params[:email] %>

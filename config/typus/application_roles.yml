@@ -1,8 +1,0 @@
-# Typus Roles Configuration File
-#
-# Use the README file as a reference to customize settings.
-
-admin:
-  Category: create, read, update, delete
-  Member: create, read, update, delete
-  User: create, read, update, delete

@@ -42,10 +42,10 @@ set :deploy_via, :remote_cache
 namespace :deploy do
   desc "Symlink database and environment config files."
   task :symlink_files do
-    run "ln -nfs #{shared_path}/system/database.yml #{release_path}/config/database.yml"
+    run "ln -nfs #{shared_path}/database.yml #{release_path}/config/database.yml"
     run "ln -nfs #{shared_path}/email.rb #{release_path}/config/initializers/email.rb"
   end
 end
  
 after 'deploy:update_code', 'deploy:symlink_files'
-after 'deploy:symlink', 'deploy:cleanup'
+after 'deploy:restart', 'deploy:cleanup'

@@ -4,7 +4,7 @@ class SiteMailer < ActionMailer::Base
 
   def member_activation(member)
     @member = member
-    mail :to => member.email, :subject => '[nshvll.org] Activate your account'
+    mail :to => member.email, :bcc => ADMIN_EMAIL, :subject => '[nshvll.org] Activate your account'
   end
 
   def member_activated(member)

@@ -5,6 +5,3 @@
 log/*.log
 tmp/**/*
 config/database.yml
-config/initializers/email.rb
-config/deploy.rb
-public/system

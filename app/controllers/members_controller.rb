@@ -1,7 +1,8 @@
 class MembersController < ApplicationController
 
   def index
-    @members = Member.approved.order("RAND(#{cookies[:rand_seed]})").includes(:categories).paginate(:per_page => 15, :page => params[:page]).all
+    Member.connection.execute("select setseed(#{cookies[:rand_seed]})")
+    @members = Member.approved.order('random()').includes(:categories).paginate(:per_page => 15, :page => params[:page]).all
     @categories = Category.order('name')
     @page = params[:page]
   end
@@ -18,7 +19,8 @@ class MembersController < ApplicationController
     end
 
     @categories = Category.order('name')
-    @members = @category.members.approved.order("RAND(#{cookies[:rand_seed]})").paginate(:per_page => 15, :page => params[:page]).includes(:categories).all
+    Member.connection.execute("select setseed(#{cookies[:rand_seed]})")
+    @members = @category.members.approved.order('random()').includes(:categories).paginate(:per_page => 15, :page => params[:page]).all
     @page = params[:page]
 
     respond_to do |format|

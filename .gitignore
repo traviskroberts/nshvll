@@ -1,9 +1,9 @@
 .DS_Store
-.rvmrc
+.env
+.ruby-gemset
+.ruby-version
 log/*.log
 tmp/**/*
-doc/api
-doc/app
 config/database.yml
 config/initializers/email.rb
 config/deploy.rb

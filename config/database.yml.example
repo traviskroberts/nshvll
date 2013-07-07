@@ -1,0 +1,17 @@
+development:
+  adapter: postgresql
+  database: nshvll_development
+  username:
+  password:
+
+test:
+  adapter: postgresql
+  database: nshvll_test
+  username:
+  password:
+
+production:
+  adapter: postgresql
+  database: nshvll_production
+  username:
+  password:

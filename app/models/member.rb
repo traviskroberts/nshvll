@@ -13,10 +13,11 @@ class Member < ActiveRecord::Base
   scope :approved, where('active = ?', true)
 
   has_attached_file :image,
+                    :storage => :s3,
+                    :s3_credentials => "#{Rails.root}/config/s3.yml",
                     :styles => { :normal => '200x200#', :small => '100x100#' },
                     :default_style => :normal,
-                    :url => "/system/:class/:attachment/:id/:style/:basename.:extension",
-                    :path => ":rails_root/public/system/:class/:attachment/:id/:style/:basename.:extension"
+                    :path => ":class/:attachment/:id/:style/:basename.:extension"
 
   def self.find_by_activation(activation_code)
     self.where('activation = ?', activation_code).first

@@ -2,15 +2,14 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.0.20'
 
-gem 'mysql2', '~> 0.2.6'
+gem 'pg'
 gem 'paperclip'
-gem 'will_paginate', '~> 3.0.0'
+gem 'aws-sdk'
+gem 'will_paginate'
 gem 'dynamic_form'
 gem 'exception_notification'
 
 group :development do
-  gem 'pry'
-  gem 'capistrano'
-  gem 'capistrano_colors'
-  gem 'rvm-capistrano'
+  gem 'pry-rails'
+  gem 'dotenv-rails'
 end

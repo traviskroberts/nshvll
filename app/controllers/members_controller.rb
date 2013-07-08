@@ -2,7 +2,7 @@ class MembersController < ApplicationController
 
   def index
     Member.connection.execute("select setseed(#{cookies[:rand_seed]})")
-    @members = Member.approved.order('random()').includes(:categories).paginate(:per_page => 15, :page => params[:page]).all
+    @members = Member.approved.order('random()').includes(:categories).page(params[:page]).per(15)
     @categories = Category.order('name')
     @page = params[:page]
   end
@@ -20,7 +20,7 @@ class MembersController < ApplicationController
 
     @categories = Category.order('name')
     Member.connection.execute("select setseed(#{cookies[:rand_seed]})")
-    @members = @category.members.approved.order('random()').includes(:categories).paginate(:per_page => 15, :page => params[:page]).all
+    @members = @category.members.approved.order('random()').includes(:categories).page(params[:page]).per(15)
     @page = params[:page]
 
     respond_to do |format|

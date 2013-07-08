@@ -5,11 +5,15 @@ gem 'rails', '3.0.20'
 gem 'pg'
 gem 'paperclip'
 gem 'aws-sdk'
-gem 'will_paginate'
+gem 'activeadmin'
+gem 'kaminari'
 gem 'dynamic_form'
 gem 'exception_notification'
 gem 'unicorn'
-gem 'newrelic_rpm'
+
+group :production do
+  gem 'newrelic_rpm'
+end
 
 group :development do
   gem 'pry-rails'

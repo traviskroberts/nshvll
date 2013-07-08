@@ -1,4 +1,6 @@
 Nshvll::Application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   root :to => 'members#index'
 
   resources :members do
@@ -10,4 +12,6 @@ Nshvll::Application.routes.draw do
   match 'category/:slug' => 'members#by_category', :as => 'category'
   match 'member/edit' => 'members#generate_edit', :as => 'member_generate_edit'
   match 'member/edit/:edit_code' => 'members#edit', :as => 'member_edit'
+
+  ActiveAdmin.routes(self)
 end

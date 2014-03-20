@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 ruby '1.9.3'
 
-gem 'rails', '3.0.20'
+gem 'rails', '~> 3.0.20'
 gem 'pg'
 gem 'paperclip'
 gem 'aws-sdk'

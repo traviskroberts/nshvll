@@ -1,7 +1,8 @@
 class MembersController < ApplicationController
 
   def index
-    Member.connection.execute("select setseed(#{cookies[:rand_seed]})")
+    seed_val = Member.connection.quote(cookies[:rand_seed])
+    Member.connection.execute("select setseed(#{seed_val})")
     @members = Member.approved.order('random()').includes(:categories).page(params[:page]).per(15)
     @categories = Category.order('name')
     @page = params[:page]
